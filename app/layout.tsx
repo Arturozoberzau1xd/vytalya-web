@@ -12,15 +12,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// METADATOS REALES PARA GOOGLE
+// CONFIGURACIÓN DE METADATOS INTEGRADA
 export const metadata: Metadata = {
   title: "Vytalya | Estética Avanzada y Sueroterapia en Pachuca",
   description: "Especialistas en Bótox, Ácido Hialurónico, HIFU y Sueroterapia a domicilio en Pachuca, Hidalgo. Realza tu belleza natural con protocolos de vanguardia.",
   keywords: ["Bótox Pachuca", "Sueroterapia Pachuca", "HIFU Pachuca", "Estética avanzada Hidalgo", "Vytalya"],
   authors: [{ name: "Vytalya" }],
-  viewport: "width=device-width, initial-scale=1",
+  // ELIMINAMOS VIEWPORT DE AQUÍ (Next.js lo maneja solo o en constante aparte)
   icons: {
-    icon: "/gallery/vytalya.jpg", // Esto hará que tu logo salga en la pestañita del navegador
+    icon: "/gallery/vytalya.jpg",
+  },
+  // ASÍ SE PONE EL CÓDIGO DE GOOGLE EN NEXT.JS:
+  verification: {
+    google: "gZjIScHi8I_ts5qtn8c8btl8oI48r1XVxhF9iERkGYM",
   },
   openGraph: {
     title: "Vytalya | Clínica de Estética Elite",
@@ -37,10 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es"> {/* Cambiado de 'en' a 'es' para SEO en español */}
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
