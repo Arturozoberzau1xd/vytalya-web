@@ -18,7 +18,7 @@ const categoriasServicios = [
     ]
   },
   {
-    titulo: "Tecnología ",
+    titulo: "Tecnología",
     icono: <Zap size={20} className="text-gold" />,
     servicios: [
       { nombre: "Radiofrecuencia Corporal", desc: "Tensado y remodelación corporal.", img: "/gallery/corporal.jpg" },
@@ -53,21 +53,25 @@ const destacados = [
     title: "Bótox",
     description: "Suaviza líneas de expresión con resultados naturales y frescos.",
     image: "/gallery/botox.jpg",
+    seo: "Aplicación de Bótox en Pachuca - Especialistas en armonización facial"
   },
   {
     title: "Ácido hialurónico",
     description: "Armonización, volumen y perfilado con hidratación profunda.",
     image: "/gallery/acido.jpg",
+    seo: "Rellenos con Ácido Hialurónico en Pachuca - Perfilado de labios y rostro"
   },
   {
     title: "Sueroterapia",
     description: "Vitaminas y minerales vía intravenosa para energía inmediata.",
     image: "/gallery/sueroterapia.jpg",
+    seo: "Sueroterapia en Pachuca - Hidratación y vitaminas a domicilio"
   },
   {
     title: "Radiofrecuencia Corporal",
     description: "Tecnología no invasivo con ondas electromagnéticas",
     image: "/gallery/hifufacial.jpg",
+    seo: "Radiofrecuencia y HIFU en Pachuca - Tensado de piel sin cirugía"
   },
 ];
 
@@ -77,6 +81,18 @@ export default function Services({ whatsappPhone }: { whatsappPhone: string }) {
       id="servicios" 
       className="mx-auto max-w-full overflow-hidden px-4 md:px-6 py-24 relative"
     >
+      {/* --- BLOQUE SEO INVISIBLE PARA GOOGLE --- */}
+      <div className="sr-only">
+        <h2>Clínica de Estética en Pachuca - Vytalya</h2>
+        <p>Especialistas en aplicación de Bótox, Ácido Hialurónico y Sueroterapia a domicilio en Pachuca de Soto, Hidalgo. Ubicados en San Javier.</p>
+        <ul>
+          <li>Tratamientos de Bótox en Pachuca</li>
+          <li>Sueroterapia premium a domicilio en Pachuca</li>
+          <li>HIFU y Radiofrecuencia en Pachuca</li>
+          <li>Plasma Rico en Plaquetas y Mesoterapia</li>
+        </ul>
+      </div>
+
       {/* Luces de fondo */}
       <div className="absolute top-0 -right-20 w-64 md:w-[500px] h-64 md:h-[500px] bg-gold/5 blur-[100px] -z-10 rounded-full" />
       <div className="absolute bottom-0 -left-20 w-64 md:w-[500px] h-64 md:h-[500px] bg-gold/5 blur-[100px] -z-10 rounded-full" />
@@ -94,7 +110,7 @@ export default function Services({ whatsappPhone }: { whatsappPhone: string }) {
             <div className="relative h-52 md:h-64 w-full">
               <Image 
                 src={s.image} 
-                alt={s.title} 
+                alt={s.seo} // Usamos la propiedad SEO para que Google vea "Bótox en Pachuca"
                 fill 
                 className="object-cover transition-transform duration-1000 group-hover:scale-110" 
               />
@@ -145,7 +161,7 @@ export default function Services({ whatsappPhone }: { whatsappPhone: string }) {
                   <div className="absolute inset-0 opacity-30 lg:opacity-0 lg:group-hover:opacity-60 transition-all duration-700">
                     <Image 
                       src={ser.img} 
-                      alt={ser.nombre} 
+                      alt={`${ser.nombre} en Clínica Vytalya Pachuca`} // Alt optimizado
                       fill 
                       className="object-cover transition-transform duration-700 scale-110 group-hover:scale-100" 
                     />
@@ -173,10 +189,9 @@ export default function Services({ whatsappPhone }: { whatsappPhone: string }) {
         ))}
       </div>
 
-      {/* BLOQUE 3: BANNER HOME CONCIERGE (Sueroterapia a domicilio) */}
+      {/* BLOQUE 3: BANNER HOME CONCIERGE */}
       <div className="mt-24 max-w-4xl mx-auto">
         <div className="relative p-8 md:p-10 rounded-[2.5rem] border border-gold/20 bg-gradient-to-br from-gold/10 via-transparent to-transparent backdrop-blur-md overflow-hidden group">
-          {/* Brillo decorativo */}
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-gold/10 blur-[80px] rounded-full group-hover:bg-gold/20 transition-colors duration-700" />
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
@@ -186,16 +201,16 @@ export default function Services({ whatsappPhone }: { whatsappPhone: string }) {
               </div>
               <div>
                 <h4 className="text-white text-lg font-light tracking-[0.3em] uppercase italic">
-                  Vytalya a tu casa!!!!
+                  Vytalya a tu casa
                 </h4>
                 <p className="text-white/40 text-[13px] font-light mt-2 max-w-md leading-relaxed">
-                  Disfruta de nuestra <span className="text-gold/80 font-medium">Sueroterapia Premium</span> y protocolos selectos en la privacidad de tu residencia u oficina.
+                  Disfruta de nuestra <span className="text-gold/80 font-medium">Sueroterapia Premium en Pachuca</span> y protocolos selectos en la privacidad de tu residencia u oficina.
                 </p>
               </div>
             </div>
 
             <a 
-              href={`https://wa.me/${whatsappPhone}?text=Hola Vytalya, me interesa el servicio de Sueroterapia a domicilio ✨`}
+              href={`https://wa.me/${whatsappPhone}?text=Hola Vytalya, me interesa el servicio de Sueroterapia a domicilio en Pachuca ✨`}
               target="_blank"
               rel="noreferrer"
               className="px-8 py-4 rounded-full bg-gold/5 border border-gold/40 text-[10px] font-bold uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-black transition-all duration-500 shadow-lg"
