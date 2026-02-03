@@ -75,7 +75,7 @@ export default function Home() {
           cityLine="Pachuca, Hgo."
           hoursLine="Trabajo bajo cita"
           googleMapsUrl="https://maps.app.goo.gl/tu-link-real" // Pon el link real de tu ficha de Maps aquí
-          googleMapsEmbedUrl="https://www.google.com/maps/embed?pb=..." // El iframe que te da Google Maps
+          googleMapsEmbedUrl="https://www.google.com/maps/embed?pb=!4v1768593732793!6m8!1m7!1s-MwloT8rRZW-pv_jHzGUDw!2m2!1d20.09416100065729!2d-98.7521089752054!3f276.7711292195646!4f15.147144982859444!5f0.7820865974627469"
         />
 
         <Footer 
